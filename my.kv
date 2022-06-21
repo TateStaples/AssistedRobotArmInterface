@@ -1,0 +1,79 @@
+<MyLayout>:
+    cols: 3
+    Label:
+        text: "Participant Number:"
+        size_hint_y: .2
+    Slider:
+        id: pnumslider
+        max: 60
+        value: 1
+        on_value: pnumslider.value = self.value
+    Label:
+        text: str(int(pnumslider.value))
+        size_hint_y: .2
+    Label:
+        text: "Section Number:"
+        size_hint_y: .2
+    Spinner:
+        id: module
+        text: "A"
+        values: "A", "B"
+        size_hint: (None, None)
+        size: (100, 44)
+    Label:
+        text: " "
+        size_hint_y: .2
+    Label:
+        text: "Section Number"
+        size_hint_y: .2
+    Spinner:
+        id: sectionnum
+        text: "1"
+        values: "1", "2", "3"
+        size_hint: (None, None)
+        size: (100, 44)
+    Label:
+        text: " "
+        size_hint_y: .5
+    Label:
+        text: " "
+        size_hint_y: .5
+    Label:
+        text: " "
+        size_hint_y: .5
+    Label:
+        text: " "
+        size_hint_y: .5
+    Label:
+        text: "Are you experiment testing?"
+        size_hint_y: .2
+    Switch:
+        id: experiment
+        active: True
+    Label:
+        text: " "
+        size_hint_y: .2
+    Label:
+        text: " "
+        size_hint_y: .2
+    Label:
+        text: "Interface Type:"
+        size_hint_y: .2
+    Spinner:
+        id: interfacetype
+        text: "Manual"
+        values: "Manual", "Supervisory"
+        size_hint: (None, None)
+        size: (100, 44)
+    Label:
+        text: " "
+        size_hint_y: .5
+    Label:
+        text: " "
+        size_hint_y: .5
+    Label:
+        text: " "
+        size_hint_y: .5
+    Button:
+        text: "Start"
+        on_press: root.thing(sectionnum, module, pnumslider, experiment, interfacetype)
